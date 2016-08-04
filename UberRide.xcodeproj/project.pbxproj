@@ -12,6 +12,9 @@
 		10B464761D5383190088BBDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B464741D5383190088BBDB /* Main.storyboard */; };
 		10B464781D5383190088BBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B464771D5383190088BBDB /* Assets.xcassets */; };
 		10B4647B1D5383190088BBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B464791D5383190088BBDB /* LaunchScreen.storyboard */; };
+		10B4648A1D5383390088BBDB /* AZNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B464851D5383390088BBDB /* AZNotification.m */; };
+		10B4648B1D5383390088BBDB /* AZNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B464871D5383390088BBDB /* AZNotificationView.m */; };
+		10B4648C1D5383390088BBDB /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B464891D5383390088BBDB /* UIColor+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,13 @@
 		10B464771D5383190088BBDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B4647A1D5383190088BBDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B4647C1D5383190088BBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B464831D5383380088BBDB /* UberRide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UberRide-Bridging-Header.h"; sourceTree = "<group>"; };
+		10B464841D5383390088BBDB /* AZNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNotification.h; sourceTree = "<group>"; };
+		10B464851D5383390088BBDB /* AZNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNotification.m; sourceTree = "<group>"; };
+		10B464861D5383390088BBDB /* AZNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AZNotificationView.h; sourceTree = "<group>"; };
+		10B464871D5383390088BBDB /* AZNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AZNotificationView.m; sourceTree = "<group>"; };
+		10B464881D5383390088BBDB /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		10B464891D5383390088BBDB /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		10B4646F1D5383190088BBDB /* UberRide */ = {
 			isa = PBXGroup;
 			children = (
+				10B464821D53831E0088BBDB /* AZNotification */,
 				10B464701D5383190088BBDB /* AppDelegate.swift */,
 				10B464721D5383190088BBDB /* ViewController.swift */,
 				10B464741D5383190088BBDB /* Main.storyboard */,
@@ -62,6 +73,20 @@
 				10B4647C1D5383190088BBDB /* Info.plist */,
 			);
 			path = UberRide;
+			sourceTree = "<group>";
+		};
+		10B464821D53831E0088BBDB /* AZNotification */ = {
+			isa = PBXGroup;
+			children = (
+				10B464841D5383390088BBDB /* AZNotification.h */,
+				10B464851D5383390088BBDB /* AZNotification.m */,
+				10B464861D5383390088BBDB /* AZNotificationView.h */,
+				10B464871D5383390088BBDB /* AZNotificationView.m */,
+				10B464881D5383390088BBDB /* UIColor+Additions.h */,
+				10B464891D5383390088BBDB /* UIColor+Additions.m */,
+				10B464831D5383380088BBDB /* UberRide-Bridging-Header.h */,
+			);
+			name = AZNotification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B4648C1D5383390088BBDB /* UIColor+Additions.m in Sources */,
+				10B4648B1D5383390088BBDB /* AZNotificationView.m in Sources */,
 				10B464731D5383190088BBDB /* ViewController.swift in Sources */,
+				10B4648A1D5383390088BBDB /* AZNotification.m in Sources */,
 				10B464711D5383190088BBDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,10 +279,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UberRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.UberRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UberRide/UberRide-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -262,10 +293,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UberRide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.earoa.UberRide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UberRide/UberRide-Bridging-Header.h";
 			};
 			name = Release;
 		};
