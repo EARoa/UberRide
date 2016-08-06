@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UberRide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FfP-hn-J6Z">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="492012823.80996698">
+                                    <!--2016-08-04 14:13:43 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hop in an Uber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGK-wr-UT2">
+                                <rect key="frame" x="0.0" y="105" width="600" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rke-Pj-KSK">
+                                <rect key="frame" x="259" y="215" width="82" height="38"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.27450980390000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="4vB-GK-ElE"/>
+                                    <constraint firstAttribute="width" constant="82" id="WyL-pi-ubC"/>
+                                </constraints>
+                                <state key="normal" title="Ready">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="readyButtonCompleted" destination="BYZ-38-t0r" eventType="touchUpInside" id="U4d-WS-za0"/>
+                                    <action selector="readyButtonisPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zX-YT-pxS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YGK-wr-UT2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Xy-Pa-dqk"/>
+                            <constraint firstAttribute="trailing" secondItem="YGK-wr-UT2" secondAttribute="trailing" id="0xw-r9-dH8"/>
+                            <constraint firstItem="YGK-wr-UT2" firstAttribute="trailing" secondItem="FfP-hn-J6Z" secondAttribute="trailing" id="KXi-WL-I78"/>
+                            <constraint firstItem="rke-Pj-KSK" firstAttribute="top" secondItem="YGK-wr-UT2" secondAttribute="bottom" constant="86" id="RYd-si-sjy"/>
+                            <constraint firstItem="YGK-wr-UT2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="VoC-4A-NZm"/>
+                            <constraint firstItem="YGK-wr-UT2" firstAttribute="centerX" secondItem="rke-Pj-KSK" secondAttribute="centerX" id="kRR-Ig-88U"/>
+                            <constraint firstItem="YGK-wr-UT2" firstAttribute="leading" secondItem="FfP-hn-J6Z" secondAttribute="leading" id="ltj-r2-tDq"/>
+                            <constraint firstItem="FfP-hn-J6Z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="vNB-TR-A45"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="FfP-hn-J6Z" id="xHC-wo-XqR"/>
+                        <outlet property="myDate" destination="YGK-wr-UT2" id="O4q-6G-V2X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="311"/>
         </scene>
     </scenes>
 </document>
